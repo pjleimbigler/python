@@ -1,0 +1,42 @@
+This is a test. This is another test.
+I'm gonna want to count the words in this corpus. Is that so hard to implement?
+Seriously, how can I call myself a data scientist without figuring out a neat
+way of implementing this? This should be case-insensitive and split by
+whitespace and punctuation, not just single spaces.
+
+I am about to attempt changing the contents of this corpus file. Ah, success:
+I had opened this file in vim using :tab sview corpus.txt, which opens in
+read-only format. I then typed the above sentence and typed :w, which produced
+a vim error: read-only (type w! to override). I did so, and success. Next, I'd
+like to investigate the nuances of sview versus the bash "view" command, and
+the vim -m command.
+
+Okay, I'm going to type this sentence. Now, I'm going to press ctrl+g *while in
+edit mode*, then u, then continue typing. This is a second sentence. Here we
+go... Another sentence, then ctrl-g, then u. Now, I'm going to exit insert mode
+and press u multiple times. Cool, it worked! I now know how to insert undo
+points while staying in insert mode. Let's try this after each word.
+
+This is the only edit since the last file save. I'm going to enter :earlier 1f
+to see if this line disappears. EDIT: sure enough, it does!
+
+All right, we're back. I'm about to type ctrl-u in insert mode:
+Damn, that was scary. Pressing ctrl-u in insert mode deletes everything you
+type and stores it in the ". register, which can't simply be pasted back since
+it would also capture the ctrl-u sequence. The way to recover is to exit insert
+mode, and enter :@a = @., then "aP. For some reason, this copies over the
+contents of ". into "a, but skips the ctrl-u sequence.
+
+I just tried installing Powerline. Not sure if it worked...
+
+Oh shit, it worked! I had to copy-paste this line into my Vundle-handled
+~/.vimrc:
+Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+I then ran:
+:BundleInstall
+This opened a new split window in which Vundle reported success. Typed :close.
+I then sourced ~/.vimrc, which didn't seem to do anything. I closed and
+reopened vim, and voila: I see the Powerline! It's almost 1am on the eve of my
+first day at Klick, so I'll leave the fine-tuning and deep understanding of
+Powerline to another day. I imagine I'll be repeating a lot of these setup
+steps on the company laptop they'll give me.

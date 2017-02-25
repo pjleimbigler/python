@@ -1,0 +1,15 @@
+This is a test.
+Do I really need NERDtree? Seems more trouble than it's worth. I know how to
+use the goddamn bash shell. I don't need yet another wrapper to clutter my
+screen.
+Okay, let's see what happens if I DON'T save and type ZZ in command mode...
+
+Well interesting. ZZ saved and quit silently.
+
+Ah ha! ZQ quits silently without saving. ZZ quits WITH saving. Dangerous...
+
+test-delete-me.txt
+
+2017-2-18 Sat
+All right, I'm back, and ready to learn more about git, vim, Python, and data
+science in general. Where to start...
