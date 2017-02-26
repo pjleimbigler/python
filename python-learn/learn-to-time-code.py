@@ -2,23 +2,21 @@ import time
 
 N = int(1e6)
 
-# start time
-ts = time.time()
-# Inefficient: create a list of length N in memory,
+start = time.time()
+# Inefficient: creaend a list of length N in memory,
 # then iterate over it
 for k in range(N):
-    k += 1
+    pass
 
-# end time
-te = time.time()
+end = time.time()
 
-print 'Iterating through a list of', N, 'elements took', 1000*(te - ts), 'milliseconds.'
+print 'Iterating through a list of', N, 'elements took', \
+round(1000*(end - start),2), 'milliseconds.'
 
-# start time
-ts = time.time()
+start = time.time()
 for l in xrange(N):
-    l += 1
-# end time
-te = time.time()
+    pass
+end = time.time()
 
-print 'Iterating through an xrange generator of', N, 'elements took', 1000*(te - ts), 'milliseconds.'
+print 'Iterating through an xrange generator of', N, 'elements took', \
+round(1000*(end - start),2), 'milliseconds.'
